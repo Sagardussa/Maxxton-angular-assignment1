@@ -1,0 +1,49 @@
+<!-- <form>
+    <input type="text" />
+</form> -->
+<div class="container m-2">
+    <h1>Forms</h1>
+    <!-- Angular Generated Form- {{ employeeForm.value | json }}<br />
+    <h5>
+        dirty{{ employeeForm.dirty }} <br />
+        pristine {{ employeeForm.pristine }} <br />
+        touched{{ employeeForm.touched }}<br />
+        untouched{{ employeeForm.untouched }} <br />
+        valid{{ employeeForm.valid }}<br />
+        invalid{{ employeeForm.invalid }}<br />
+    </h5>
+    <br /> -->
+
+    <form [formGroup]="employeeForm" (ngSubmit)="AddResume()">
+
+        <div class="form-group col-3">
+            <label>firstName</label>
+            <input type="text" class="form-control" formControlName="firstName" [class.is-invalid]="
+          getfirstName && getfirstName.invalid && getfirstName.touched" />
+        </div>
+
+        <div *ngIf="getfirstName && getfirstName.invalid && getfirstName.touched">
+            <span class="text-danger" *ngIf="getfirstName.errors?.['required'] ">
+                firstName is required
+            </span>
+            <span class="text-danger" *ngIf="getfirstName.errors?.['minlength'] ||getfirstName.errors?.['maxlength'] ">
+                FullName min 2 and max 30 char
+            </span>
+        </div>
+        <div class="form-group col-3">
+            <label>MiddleName</label>
+            <input type="text" class="form-control" formControlName="middleName"
+                [class.is-invalid]="getmiddleName && getmiddleName.invalid && getmiddleName.touched" />
+        </div>
+
+
+        <div class="form-group col-3">
+            <label>LastName</label>
+            <input type="text" class="form-control" formControlName="middleName"
+                [class.is-invalid]="getmiddleName && getmiddleName.invalid && getmiddleName.touched" />
+        </div>
+
+
+        <button type="submit" class="btn btn-primary m-2">Submit</button>
+    </form>
+</div>
