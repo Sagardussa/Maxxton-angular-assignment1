@@ -1,26 +1,17 @@
-<div *ngIf="errorDis" class="alert alert-danger">
-    <h2>
-        {{errorMsg}}
-    </h2>
-</div>
 <div *ngIf="!errorDis">
-
+    <div *ngIf="errorDis" class="alert alert-danger">
+        <h2>
+            {{errorMsg}}
+        </h2>
+    </div>
 
 
     <!-- <app-empcount [all]="getTotalEmp()" [female]="getTotalfemaleEmp()" [male]="getTotalmaleEmp()" #childcomp>
     </app-empcount> -->
     <!-- {{ childcomp.selectedRadiovBtnValue }} -->
 
-    <div class="col-10 m-4">
+    <div class="col-11 m-2">
         <br />
-        <!-- <input type="text" [(ngModel)]="fname" placeholder="add Employee" />
-        &nbsp;
-        <button class="btn btn-primary" (click)="addemp()">Add Employee</button>
-        <br />
-        <br />
-        <input type="text" placeholder="Search by Name" [(ngModel)]="searchvalue" />
-        <br />
-        <br /> -->
         <table border class="table table-bordered">
             <tr class="bg-dark text-white">
                 <th>Sr no</th>
@@ -28,11 +19,11 @@
                 <th>MiddleName</th>
                 <th>LastName</th>
                 <th>Moblie</th>
-                <th>email</th>
-                <th>address</th>
-                <th>city</th>
-                <th>state</th>
-                <th>country</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
 
             </tr>
             <!-- <ng-container *ngFor="let n of Employee | filter: searchvalue"> -->

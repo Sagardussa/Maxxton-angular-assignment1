@@ -34,12 +34,12 @@ export class EmplistComponent implements OnInit {
       next: (res) => {
         // console.log(res)
         this.Employee = res
+      },
+      error: (error) => {
+        this.errorDis = true
+        this.errorMsg = error;
+        console.log(error)
       }
-      // error: (error) => {
-      //   this.errorDis = true
-      //   this.errorMsg = error;
-      //   console.log(error)
-      // }
     })
 
   }

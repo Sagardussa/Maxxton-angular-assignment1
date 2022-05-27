@@ -9,7 +9,8 @@ import { HeaderComponent } from './component/header/header.component';
 import { NotapageComponent } from './component/notapage/notapage.component';
 import { HomeComponent } from './component/home/home.component';
 import { AddemployeeComponent } from './component/addemployee/addemployee.component';
-import { HttpClientModule } from "@angular/common/http"
+import { HttpClientModule } from "@angular/common/http";
+import { EmpCardComponent } from './component/emp-card/emp-card.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from "@angular/common/http"
     HeaderComponent,
     NotapageComponent,
     HomeComponent,
-    AddemployeeComponent
+    AddemployeeComponent,
+    EmpCardComponent
   ],
   imports: [
     BrowserModule,

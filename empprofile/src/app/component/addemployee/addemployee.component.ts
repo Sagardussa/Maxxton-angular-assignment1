@@ -89,7 +89,8 @@ export class AddemployeeComponent implements OnInit {
 
   AddResume() {
     // console.log(this.employeeForm.value);
-    this._emp.postEmployee(this.employeeForm.value).subscribe({
+    this.empdata = this.employeeForm.value
+    this._emp.postEmployee(this.empdata).subscribe({
       next: (res) => {
         console.log("data is submit", res)
       }
