@@ -1,0 +1,79 @@
+<div *ngIf="errorDis" class="alert alert-danger">
+    <h2>
+        {{errorMsg}}
+    </h2>
+</div>
+<div *ngIf="!errorDis">
+
+
+
+    <!-- <app-empcount [all]="getTotalEmp()" [female]="getTotalfemaleEmp()" [male]="getTotalmaleEmp()" #childcomp>
+    </app-empcount> -->
+    <!-- {{ childcomp.selectedRadiovBtnValue }} -->
+
+    <div class="col-10 m-4">
+        <br />
+        <!-- <input type="text" [(ngModel)]="fname" placeholder="add Employee" />
+        &nbsp;
+        <button class="btn btn-primary" (click)="addemp()">Add Employee</button>
+        <br />
+        <br />
+        <input type="text" placeholder="Search by Name" [(ngModel)]="searchvalue" />
+        <br />
+        <br /> -->
+        <table border class="table table-bordered">
+            <tr class="bg-dark text-white">
+                <th>Sr no</th>
+                <th>FirstName</th>
+                <th>MiddleName</th>
+                <th>LastName</th>
+                <th>Moblie</th>
+                <th>email</th>
+                <th>address</th>
+                <th>city</th>
+                <th>state</th>
+                <th>country</th>
+
+            </tr>
+            <!-- <ng-container *ngFor="let n of Employee | filter: searchvalue"> -->
+            <ng-container *ngFor="let e of Employee">
+
+                <!-- <tr
+      [style.color]="text"
+      *ngIf="selectedRadioBtn === 'all' || selectedRadioBtn == n.gender"
+    > -->
+                <!-- <tr *ngIf="
+          childcomp.selectedRadiovBtnValue == 'all' ||
+          childcomp.selectedRadiovBtnValue == n.gender
+        " (click)="onselect(n.id)"> -->
+                <tr>
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.firstName | lowercase }}</td>
+                    <td>{{ e.middleName| lowercase }}</td>
+                    <td>{{ e.lastName| lowercase }}</td>
+                    <td>{{e.moblie}} </td>
+                    <td>{{e.email}} </td>
+                    <td>{{e.address}} {{e.street}} {{e.pincode}}</td>
+                    <td>{{e.city}} </td>
+                    <td>{{e.state}} </td>
+                    <td>{{e.country}} </td>
+
+
+
+                    <!-- <td>{{ n.gender | titlecase | slice: 0:1 }}</td> -->
+
+                    <!-- <td>
+                        <button type="button" class="btn btn-success bg-success m-2 " (click)="editEmp(n.id)">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger bg-danger m-2" (click)="deleteEmp(n.id)">
+                            <i class="bi bi-trash"></i>
+                        </button>
+
+                    </td> -->
+                </tr>
+            </ng-container>
+        </table>
+    </div>
+
+</div>

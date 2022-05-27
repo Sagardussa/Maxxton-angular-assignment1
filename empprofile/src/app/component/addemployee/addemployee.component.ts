@@ -7,6 +7,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { checkNamestring, emailcheck } from 'src/app/shared/customvalidationfun';
+import { Employeeclass } from 'src/app/shared/employeeclass';
+import { EmpserviceService } from 'src/app/shared/empservice.service';
 
 
 @Component({
@@ -16,7 +18,8 @@ import { checkNamestring, emailcheck } from 'src/app/shared/customvalidationfun'
 })
 export class AddemployeeComponent implements OnInit {
   employeeForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private _emp: EmpserviceService) { }
 
   ngOnInit(): void {
 
@@ -45,6 +48,7 @@ export class AddemployeeComponent implements OnInit {
       }
 
     );
+
   }
 
   get getfirstName() {
@@ -81,9 +85,15 @@ export class AddemployeeComponent implements OnInit {
     return this.employeeForm.get('country');
   }
 
+  empdata = new Employeeclass("", "", "", 0, "", "", "", 0, "", "", "");
 
   AddResume() {
-    console.log(this.employeeForm.value);
+    // console.log(this.employeeForm.value);
+    this._emp.postEmployee(this.employeeForm.value).subscribe({
+      next: (res) => {
+        console.log("data is submit", res)
+      }
+    })
   }
 
 }

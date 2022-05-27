@@ -1,10 +1,15 @@
 export interface IEmployee {
-  id: number;
-  fname: string;
-  lname: string;
-  gender: string;
-  salary: number;
-  hiredate: string;
-  hra: number;
-  da: number;
+  Title: string,
+  firstName: string,
+  middleName: string,
+  lastName: string,
+  Mobile: number,
+  email: string,
+  address: any,
+  street: any,
+  pinCode: number,
+  city: string,
+  state: string,
+  country: string,
+  id?: number,
 }

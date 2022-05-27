@@ -20,7 +20,7 @@ const routes: Routes = [
     component: AddemployeeComponent,
   },
   {
-    path: 'emp', component: EmplistComponent
+    path: 'emplist', component: EmplistComponent
   },
 
   {

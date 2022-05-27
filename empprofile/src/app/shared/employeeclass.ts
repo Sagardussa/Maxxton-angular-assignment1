@@ -1,17 +1,18 @@
 export class Employeeclass {
   constructor(
-    public fname: string,
-    public lname: string,
-    public gender: string,
-    public salary: number,
-    public hiredate: string,
-    public hra: number,
-    public da: number,
-    public designation: any,
-    public id?: number
-  ) {}
+    public firstName: string,
+    public middleName: string,
+    public lastName: string,
+    public Mobile: number,
+    public email: string,
+    public address: any,
+    public street: any,
+    public pinCode: number,
+    public city: string,
+    public state: string,
+    public country: string,
+    public id?: number,
+    public Title?: string,
 
-  // public getfullname() {
-  //   return this.fname + ' ' + this.lname;
-  // }
+  ) { }
 }

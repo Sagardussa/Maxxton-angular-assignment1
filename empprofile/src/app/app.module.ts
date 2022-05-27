@@ -9,6 +9,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { NotapageComponent } from './component/notapage/notapage.component';
 import { HomeComponent } from './component/home/home.component';
 import { AddemployeeComponent } from './component/addemployee/addemployee.component';
+import { HttpClientModule } from "@angular/common/http"
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { AddemployeeComponent } from './component/addemployee/addemployee.compon
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    HttpClientModule
 
   ],
   providers: [],
