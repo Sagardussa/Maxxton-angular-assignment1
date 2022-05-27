@@ -6,7 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { checkNamestring } from 'src/app/shared/customvalidationfun';
+import { checkNamestring, emailcheck } from 'src/app/shared/customvalidationfun';
 
 
 @Component({
@@ -26,21 +26,19 @@ export class AddemployeeComponent implements OnInit {
         firstName: ['', [
           Validators.required,
           Validators.minLength(2),
-          Validators.maxLength(30), checkNamestring
-        ]],
+          Validators.maxLength(30), checkNamestring]],
         middleName: ['', [Validators.required, Validators.minLength(2),
-        Validators.maxLength(30), checkNamestring]
-        ],
+        Validators.maxLength(30), checkNamestring]],
         lastName: ['', [Validators.required, Validators.minLength(2),
-        Validators.maxLength(30), checkNamestring
-        ]],
-        moblie: ['', [Validators.required, Validators.minLength(2),
-        Validators.maxLength(30), checkNamestring
-        ]],
-        email: ['',
-          [Validators.required,
-          ]]
-
+        Validators.maxLength(30), checkNamestring]],
+        moblie: ['', [Validators.required]],
+        email: ['', [Validators.required, emailcheck]],
+        address: ["", Validators.required],
+        street: ["", Validators.required],
+        pincode: ["", Validators.required],
+        city: ["", Validators.required, checkNamestring],
+        state: ["", Validators.required,],
+        country: ["", Validators.required,]
       }
 
     );
@@ -51,7 +49,6 @@ export class AddemployeeComponent implements OnInit {
   }
   get getmiddleName() {
     return this.employeeForm.get('middleName');
-
   }
   get getlastName() {
     return this.employeeForm.get('lastName');
@@ -61,6 +58,24 @@ export class AddemployeeComponent implements OnInit {
   }
   get getemail() {
     return this.employeeForm.get('email');
+  }
+  get getaddress() {
+    return this.employeeForm.get('address');
+  }
+  get getstreet() {
+    return this.employeeForm.get('street');
+  }
+  get getpincode() {
+    return this.employeeForm.get('pincode');
+  }
+  get getcity() {
+    return this.employeeForm.get('city');
+  }
+  get getstate() {
+    return this.employeeForm.get('state');
+  }
+  get getcountry() {
+    return this.employeeForm.get('country');
   }
 
 
