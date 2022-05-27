@@ -27,6 +27,48 @@
       "state": "Maharashtra",
       "country": "India",
       "id": 2
+    },
+    {
+      "firstName": "anand",
+      "middleName": "suresh",
+      "lastName": "battul",
+      "moblie": 54548948489,
+      "email": "anand@gmail.com",
+      "address": "716,Shastri Nagar Solapur",
+      "street": "Plot NO.16 Shastri Nagar Solapur",
+      "pincode": "413003",
+      "city": "Solapur",
+      "state": "Maharashtra",
+      "country": "India",
+      "id": 3
+    },
+    {
+      "firstName": "anand",
+      "middleName": "suresh",
+      "lastName": "battul",
+      "moblie": 54548948489,
+      "email": "anand@gmail.com",
+      "address": "716,Shastri Nagar Solapur",
+      "street": "Plot NO.16 Shastri Nagar Solapur",
+      "pincode": "413003",
+      "city": "Solapur",
+      "state": "Maharashtra",
+      "country": "India",
+      "id": 4
+    },
+    {
+      "firstName": "anand",
+      "middleName": "suresh",
+      "lastName": "battul",
+      "moblie": 54548948489,
+      "email": "anand@gmail.com",
+      "address": "716,Shastri Nagar Solapur",
+      "street": "Plot NO.16 Shastri Nagar Solapur",
+      "pincode": "413003",
+      "city": "Solapur",
+      "state": "Maharashtra",
+      "country": "India",
+      "id": 5
     }
   ]
 }
