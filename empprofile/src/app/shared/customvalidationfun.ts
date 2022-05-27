@@ -15,6 +15,20 @@ export function emailcheck(
   );
   return n ? null : { invalidemail: { err: 'Invalid Email format ' } };
 }
+
+
+export function checkNamestring(
+  control: AbstractControl
+): { [key: string]: any } | null {
+  const s = /[a-zA-Z]/.test(
+    control.value
+  );
+  return s ? null : { invalidString: { err: 'Invalid format ' } };
+}
+
+
+
+
 export function checkskill(invalid: RegExp): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } | null => {
     const n = invalid.test(control.value);

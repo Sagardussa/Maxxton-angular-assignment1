@@ -1,33 +1,22 @@
-<!-- <form>
-    <input type="text" />
-</form> -->
 <div class="container m-2">
-    <h1>Forms</h1>
-    <!-- Angular Generated Form- {{ employeeForm.value | json }}<br />
-    <h5>
-        dirty{{ employeeForm.dirty }} <br />
-        pristine {{ employeeForm.pristine }} <br />
-        touched{{ employeeForm.touched }}<br />
-        untouched{{ employeeForm.untouched }} <br />
-        valid{{ employeeForm.valid }}<br />
-        invalid{{ employeeForm.invalid }}<br />
-    </h5>
-    <br /> -->
-
+    <h1> Employee Forms</h1>
     <form [formGroup]="employeeForm" (ngSubmit)="AddResume()">
-
         <div class="form-group col-3">
-            <label>firstName</label>
-            <input type="text" class="form-control" formControlName="firstName" [class.is-invalid]="
-          getfirstName && getfirstName.invalid && getfirstName.touched" />
+            <label>FirstName</label>
+            <input type="text" class="form-control" formControlName="firstName"
+                [class.is-invalid]=" getfirstName && getfirstName.invalid && getfirstName.touched" />
         </div>
 
         <div *ngIf="getfirstName && getfirstName.invalid && getfirstName.touched">
             <span class="text-danger" *ngIf="getfirstName.errors?.['required'] ">
-                firstName is required
+                FirstName is required
             </span>
+
             <span class="text-danger" *ngIf="getfirstName.errors?.['minlength'] ||getfirstName.errors?.['maxlength'] ">
-                FullName min 2 and max 30 char
+                FirstName min 2 and max 30 char
+            </span>
+            <span class="text-danger" *ngIf="getfirstName.errors?.['invalidString'] ">
+                {{ getfirstName.errors?.['invalidString'].err}}
             </span>
         </div>
         <div class="form-group col-3">
@@ -35,12 +24,44 @@
             <input type="text" class="form-control" formControlName="middleName"
                 [class.is-invalid]="getmiddleName && getmiddleName.invalid && getmiddleName.touched" />
         </div>
-
-
+        <div *ngIf="getmiddleName && getmiddleName.invalid && getmiddleName.touched">
+            <span class="text-danger" *ngIf="getmiddleName.errors?.['required'] ">
+                MiddleName is required
+            </span>
+            <span class="text-danger" *ngIf="getmiddleName.errors?.['invalidString'] ">
+                not allowed number
+            </span>
+            <span class="text-danger"
+                *ngIf="getmiddleName.errors?.['minlength'] ||getmiddleName.errors?.['maxlength'] ">
+                MiddleName min 2 and max 30 char
+            </span>
+        </div>
         <div class="form-group col-3">
             <label>LastName</label>
-            <input type="text" class="form-control" formControlName="middleName"
-                [class.is-invalid]="getmiddleName && getmiddleName.invalid && getmiddleName.touched" />
+            <input type="text" class="form-control" formControlName="lastName"
+                [class.is-invalid]="getlastName && getlastName.invalid && getlastName.touched" />
+        </div>
+        <div *ngIf="getlastName && getlastName.invalid && getlastName.touched">
+            <span class="text-danger" *ngIf="getlastName.errors?.['required'] ">
+                LastName is required
+            </span>
+            <span class="text-danger" *ngIf="getlastName.errors?.['invalidString'] ">
+                not allowed number
+            </span>
+            <span class="text-danger" *ngIf="getlastName.errors?.['minlength'] ||getlastName.errors?.['maxlength'] ">
+                LastName min 2 and max 30 char
+            </span>
+        </div>
+        <div class="form-group col-3">
+            <label>Email</label>
+            <input type="email" class="form-control" formControlName="moblie"
+                [class.is-invalid]=" getemail && getemail.invalid && getemail.touched" />
+        </div>
+
+        <div class="form-group col-3">
+            <label>Mobile number</label>
+            <input type="number" class="form-control" formControlName="moblie"
+                [class.is-invalid]=" getmoblie && getmoblie.invalid && getmoblie.touched" />
         </div>
 
 

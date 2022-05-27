@@ -22,7 +22,8 @@ import { AddemployeeComponent } from './component/addemployee/addemployee.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
 
   ],
   providers: [],
