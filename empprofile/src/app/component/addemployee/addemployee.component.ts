@@ -23,14 +23,13 @@ export class AddemployeeComponent implements OnInit {
 
     this.employeeForm = this.fb.group(
       {
-        firstName: [
-          '', [Validators.required, Validators.minLength(2), Validators.maxLength(30),]],
-
-        middleName: [
-          '', Validators.required],
-
-        lastName: [
-          '', Validators.required]
+        firstName: ['', [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(30),]],
+        middleName: ['', Validators.required],
+        lastName: ['', Validators.required],
+        
       }
 
     );
