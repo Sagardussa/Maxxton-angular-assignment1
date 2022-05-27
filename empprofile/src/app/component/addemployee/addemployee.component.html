@@ -2,7 +2,7 @@
     <h1> Employee Forms</h1>
     <form [formGroup]="employeeForm" (ngSubmit)="AddResume()">
         <div class="  row mb-3 mt-2 ">
-            <div class="form-group col-4">
+            <div class="form-group col-3">
                 <label>FirstName</label>
                 <input type="text" class="form-control" formControlName="firstName" placeholder="Enter First Name"
                     [class.is-invalid]=" getfirstName && getfirstName.invalid && getfirstName.touched" />
@@ -20,16 +20,16 @@
                     </span>
                 </div>
             </div>
-            <div class="form-group col-4 ">
+            <div class="form-group col-3 ">
                 <label>MiddleName</label>
                 <input type="text" class="form-control" formControlName="middleName" placeholder="Enter Middle Name"
                     [class.is-invalid]="getmiddleName && getmiddleName.invalid && getmiddleName.touched" />
                 <div *ngIf="getmiddleName && getmiddleName.invalid && getmiddleName.touched">
                     <span class="text-danger" *ngIf="getmiddleName.errors?.['required'] ">
-                        MiddleName is required
+                        MidName is required
                     </span>
                     <span class="text-danger" *ngIf="getmiddleName.errors?.['invalidString'] ">
-                        not allowed number
+                        {{ getmiddleName.errors?.['invalidString'].err}}
                     </span>
                     <span class="text-danger"
                         *ngIf="getmiddleName.errors?.['minlength'] ||getmiddleName.errors?.['maxlength'] ">
@@ -38,7 +38,7 @@
                 </div>
 
             </div>
-            <div class="form-group col-4">
+            <div class="form-group col-3">
                 <label>LastName</label>
                 <input type="text" class="form-control" formControlName="lastName" placeholder="Enter Last Name"
                     [class.is-invalid]="getlastName && getlastName.invalid && getlastName.touched" />
@@ -47,7 +47,7 @@
                         LastName is required
                     </span>
                     <span class="text-danger" *ngIf="getlastName.errors?.['invalidString'] ">
-                        not allowed number
+                        {{ getlastName.errors?.['invalidString'].err}}
                     </span>
                     <span class="text-danger"
                         *ngIf="getlastName.errors?.['minlength'] ||getlastName.errors?.['maxlength'] ">
@@ -92,7 +92,7 @@
                 <input type="text" class="form-control" formControlName="street" placeholder="Apartment,street, floor"
                     [class.is-invalid]="getstreet && getstreet.invalid && getstreet.touched">
             </div>
-            <div class="form-group col-3">
+            <div class="form-group col-2">
                 <label>Pincode </label>
                 <input type="text" class="form-control" formControlName="pincode" placeholder="Enter picode"
                     [class.is-invalid]="getpincode && getpincode.invalid && getpincode.touched">
@@ -109,20 +109,47 @@
                     <span class="text-danger" *ngIf="getcity.errors?.['required'] ">
                         City is required
                     </span>
-                    <span class="text-danger" *ngIf="getcity.errors?.['invalidString']">
-                        {{getcity.errors?.['invalidString'].err}}
+                    <span class="text-danger" *ngIf="getcity.errors?.['minlength'] ||getcity.errors?.['maxlength'] ">
+                        City min 2 and max 30 char
+                    </span>
+                    <span class="text-danger" *ngIf="getcity.errors?.['invalidString'] ">
+                        {{ getcity.errors?.['invalidString'].err}}
                     </span>
                 </div>
+
             </div>
             <div class="form-group col-3">
                 <label>State </label>
                 <input type="text" class="form-control" formControlName="state" placeholder="  State"
                     [class.is-invalid]="getstate && getstate.invalid && getstate.touched">
+                <div *ngIf="getstate && getstate.invalid && getstate.touched">
+                    <span class="text-danger" *ngIf="getstate.errors?.['required'] ">
+                        State is required
+                    </span>
+                    <span class="text-danger" *ngIf="getstate.errors?.['minlength'] ||getstate.errors?.['maxlength'] ">
+                        State min 2 and max 30 char
+                    </span>
+                    <span class="text-danger" *ngIf="getstate.errors?.['invalidString'] ">
+                        {{ getstate.errors?.['invalidString'].err}}
+                    </span>
+                </div>
             </div>
-            <div class="form-group col-3">
-                <label>country </label>
+            <div class="form-group col-2">
+                <label>Country </label>
                 <input type="text" class="form-control" formControlName="country" placeholder="Country"
                     [class.is-invalid]="getcountry && getcountry.invalid && getcountry.touched">
+                <div *ngIf="getcountry && getcountry.invalid && getcountry.touched">
+                    <span class="text-danger" *ngIf="getcountry.errors?.['required'] ">
+                        Country is required
+                    </span>
+                    <span class="text-danger"
+                        *ngIf="getcountry.errors?.['minlength'] ||getcountry.errors?.['maxlength'] ">
+                        Country min 2 and max 30 char
+                    </span>
+                    <span class="text-danger" *ngIf="getcountry.errors?.['invalidString'] ">
+                        <!-- {{ getcountry.errors?.['invalidString'].err}} -->
+                    </span>
+                </div>
             </div>
 
         </div>

@@ -36,9 +36,12 @@ export class AddemployeeComponent implements OnInit {
         address: ["", Validators.required],
         street: ["", Validators.required],
         pincode: ["", Validators.required],
-        city: ["", Validators.required, checkNamestring],
-        state: ["", Validators.required,],
-        country: ["", Validators.required,]
+        city: ["", [Validators.required, Validators.minLength(2),
+        Validators.maxLength(30), checkNamestring]],
+        state: ["", [Validators.required, Validators.minLength(2),
+        Validators.maxLength(30), checkNamestring]],
+        country: ["", [Validators.required, Validators.minLength(2),
+        Validators.maxLength(30), checkNamestring]]
       }
 
     );
