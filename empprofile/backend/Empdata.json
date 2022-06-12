@@ -67,24 +67,6 @@
       "noOfDay": "5",
       "description": "",
       "id": 2
-    },
-    {
-      "employee": "umesh Gradas",
-      "department": "fronted",
-      "startDate": "2022-06-12",
-      "enddate": "2022-06-22",
-      "noOfDay": "10",
-      "description": "done",
-      "id": 3
-    },
-    {
-      "employee": "naresh",
-      "department": "backend",
-      "startDate": "2022-06-10",
-      "enddate": "2022-06-11",
-      "noOfDay": "1",
-      "description": "ok",
-      "id": 4
     }
   ]
 }
