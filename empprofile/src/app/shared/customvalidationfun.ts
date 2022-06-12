@@ -19,6 +19,23 @@ export function checkNamestring(
 }
 
 
+export function checknumber(
+  control: AbstractControl
+): { [key: string]: any } | null {
+  const s = /[0-9]/.test(
+    control.value
+  );
+  return s ? null : { invalidnumber: { err: 'allowed number ' } };
+}
+export function mobliecheck(
+  control: AbstractControl
+): { [key: string]: any } | null {
+  const s = /^[0-9_-]{10,12}$/.test(
+    control.value
+  );
+  return s ? null : { invalidmoblie: { err: '' } };
+}
+
 
 
 // export function checkskill(invalid: RegExp): ValidatorFn {

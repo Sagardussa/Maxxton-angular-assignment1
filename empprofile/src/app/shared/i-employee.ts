@@ -1,5 +1,4 @@
 export interface IEmployee {
-  Title: string,
   firstName: string,
   middleName: string,
   lastName: string,
@@ -12,4 +11,6 @@ export interface IEmployee {
   state: string,
   country: string,
   id?: number,
+  Title?: string,
+  images?: string,
 }

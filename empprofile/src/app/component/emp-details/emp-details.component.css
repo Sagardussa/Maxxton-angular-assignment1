@@ -33,7 +33,7 @@ code {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: 2px;
+    margin: 1px;
 }
 
 .number {
@@ -50,8 +50,8 @@ code {
     border: 1px solid #efefef;
     border-radius: 0.2rem;
     min-width: 320px;
-    height: 300px;
-    text-align: center;
+    height: 430px;
+    text-align: start;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.089);
 }
 
@@ -72,8 +72,8 @@ h3 {
 }
 
 .thumb-container img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
 }
 
 /* .thumb-container small {
@@ -91,8 +91,9 @@ h3 {
 
 
 
+
 .thumb-container-1 {
-    background-color: rgb(177, 67, 67);
+    background-color: rgb(225, 136, 136);
 }
 
 .thumb-container-2 {

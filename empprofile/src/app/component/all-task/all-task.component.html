@@ -1,0 +1,60 @@
+<!-- <div class="container"> -->
+<!-- <h1 class="mx-5">AllTask</h1> -->
+
+<!-- <app-addtask></app-addtask> -->
+<!-- <div class="mx-5">
+</div> -->
+<div class="col-9 mx-5">
+    <h5 *ngIf="show" class="text-danger"> {{display}} </h5>
+
+    <div class="col-3">
+        <h4>AllTask</h4>
+        <label>Enter Search</label>
+        <input type="text" placeholder="Search" [(ngModel)]="searchvalue" class=" form-control m-2">
+    </div>
+
+    <table class="table table-bordered">
+        <tr class="headtable">
+            <th>Srno</th>
+            <th>Employee</th>
+            <th>Department</th>
+            <th>StartDate</th>
+            <th>NoOfDay</th>
+            <th>EndDate</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+        <ng-container *ngFor="let t of empTaskarr  | filter: searchvalue">
+            <tr>
+                <td>{{t.id}}</td>
+                <td>
+                    {{t.employee|titlecase}}
+                </td>
+                <td>
+                    {{t.department|titlecase}}
+                </td>
+                <td>
+                    {{t.startDate |date:'dd-MM-yyyy'}}
+                </td>
+                <td>
+                    {{t.noOfDay}}
+                </td>
+                <td>
+                    <!-- {{t.startDate |enddate:t.noOfDay |date:'dd-MM-yyyy' }} -->
+                    {{t.enddate|date:'dd-MM-yyyy'}}
+                </td>
+
+                <td>
+                    {{t.description}}
+                </td>
+                <td>
+                    <button class="btn btn-primary bg-primary m-2" (click)="Delete(t.id)">Delete</button>
+                </td>
+
+            </tr>
+        </ng-container>
+    </table>
+</div>
+
+
+<!-- </div> -->

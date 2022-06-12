@@ -1,0 +1,37 @@
+<!-- <h2>
+    Id- {{empid}}
+</h2> -->
+<div class="mx-5">
+    <button (click)="gotoback()" class="btn btn-primary">Back</button>
+</div>
+<div class="app-contaner">
+    <!-- <div class="pokemon-container"> -->
+    <h1>Employee Card</h1>
+    <div class="all-container">
+        <ng-container>
+            <div class='thumb-container-{{empViewidArr.id}} thumb-container'>
+                <div class="number">
+                    <small><span>ID:- </span>{{empViewidArr.id}} </small>
+                </div>
+                <!-- <img src="../assets/images/2.png" alt="empimages"> -->
+                <img src={{empViewidArr.images}} alt="photo">
+                <div class="detail-wrapper numbers">
+                    <h3> <span>Name:-</span> {{empViewidArr.firstName|uppercase}}
+                        {{empViewidArr.lastName|uppercase}}</h3>
+                    <h3> <span>DOB:-</span>{{empViewidArr.DOB |date:'dd MMM yyyy' }}</h3>
+                    <h3> <span>Moblie:-</span> {{empViewidArr.moblie }}</h3>
+                    <h3><span>Email:-</span> {{empViewidArr.email }}</h3>
+                    <h3> <span>Address:-</span>{{empViewidArr.address}} </h3>
+                    <div>
+                    </div>
+                </div>
+
+                <app-addtask></app-addtask>
+
+            </div>
+
+        </ng-container>
+
+    </div>
+    <!-- </div> -->
+</div>

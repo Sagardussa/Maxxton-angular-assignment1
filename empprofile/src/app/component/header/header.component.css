@@ -1,3 +1,37 @@
 /* a {
-    color: white;
+    color: rgb(239, 43, 8);
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+    float: inline-start;
+    list-style: none;
+    background-color: yellow;
+    line-height: 25px;
+
+
+}
+
+#ul2 {
+    display: flex;
+    float: right;
+    background-color: rgb(215, 222, 225);
+}
+
+li {
+    margin: 5px;
+}
+
+#lis2 {
+    margin-left: 920px;
+}
+
+button {
+    background-color: rgb(16, 97, 237);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    border-color: aqua;
+    color: blanchedalmond;
 } */

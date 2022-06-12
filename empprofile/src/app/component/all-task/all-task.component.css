@@ -1,28 +1,25 @@
 table {
-    padding: 10px 60px;
+    padding: 10px 60px
 }
 
 tr {
     background-color: rgb(208, 197, 198);
-    color: rgb(16, 9, 9);
-    font-size: 16px;
+    color: rgb(14, 1, 1);
+    font-size: 18px;
 }
 
 .headtable {
-    background-color: rgb(244, 13, 13);
-    /* align-items: baseline; */
-
+    background-color: rgb(19, 36, 218);
+    align-items: baseline;
 }
 
-
-
 th {
-    padding: 10px 20px 0 20px;
+    padding: 0 10px 0 20px;
 }
 
 td {
-    padding: 0px 0px 10px 10px;
-    margin: 5px;
+    padding: 0 10px 0 20px;
+    color: blueviolet;
 }
 
 

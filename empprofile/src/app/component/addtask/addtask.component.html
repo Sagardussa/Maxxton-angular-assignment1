@@ -1,0 +1,151 @@
+<!-- <div class="d-flex justify-content-start"> -->
+<div class="mx-5">
+    <button class="btn btn-outline-primary col me-1" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button"
+        title="AddEmployee">GenerateTask</button>
+    <!-- </div> -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Task Forms</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        (click)="closebtn()"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="empTask" (ngSubmit)="addTask()" class="forms">
+                        <div class="row">
+                            <label>Employee</label>
+                            <div class="cols1">
+                                <input type="text" class="form-control" formControlName="employee"
+                                    value="{{emp.firstName}} {{emp.lastName}}" placeholder="Enter Name" />
+                            </div>
+                            <div class="spans" *ngIf="getemployee && getemployee.invalid && getemployee.touched">
+                                <span class="text-danger" *ngIf="getemployee.errors?.['required'] ">
+                                    Employee is required
+                                </span>
+
+                            </div>
+                            <label>Department</label>
+                            <div class="cols1">
+                                <input type="text" class="form-control" formControlName="department"
+                                    placeholder="Enter Department" />
+                            </div>
+                            <div class="spans" *ngIf="getdepartment && getdepartment.invalid && getdepartment.touched">
+                                <span class="text-danger" *ngIf="getdepartment.errors?.['required'] ">
+                                    Department is required
+                                </span>
+                            </div>
+
+                            <label>Start Date</label>
+                            <div class="cols1">
+                                <input type="date" class="form-control" formControlName="startDate"
+                                    placeholder="Enter Start Date" />
+                                <div *ngIf="getstartDate && getstartDate.invalid && getstartDate.touched">
+                                    <span class="text-danger" *ngIf="getstartDate.errors?.['required']">
+                                        Start Date is required </span>
+                                </div>
+                            </div>
+                            <label>Number of days</label>
+                            <div class="cols1">
+                                <input type="text" class="form-control" formControlName="noOfDay"
+                                    placeholder=" Number of days" />
+                                <h6 *ngIf="displaydate">you Have to submit work till {{ displaytask | date:'dd-MM-yyyy'
+                                    }}
+                                </h6>
+
+                            </div>
+                            <div class="spans" *ngIf="getnoOfDay && getnoOfDay.invalid && getnoOfDay.touched">
+                                <span class="text-danger" *ngIf="getnoOfDay.errors?.['required'] ">
+                                    No of Day is required
+                                </span>
+
+
+                                <span class="text-danger" *ngIf="getnoOfDay.errors?.['invalidnumber'] ">
+                                </span>
+                            </div>
+
+                            <label>Task description </label>
+                            <div class="cols1">
+                                <input type="text" class="form-control" formControlName="description"
+                                    placeholder=" Enter Description" />
+                            </div>
+
+                            <div class="m-2">
+                                <button type="submit" class="btn btn-primary" [disabled]="empTask.invalid">Add
+                                    Task</button>
+                                <button type="button" class="btn btn-primary mx-3 " data-bs-dismiss="modal"
+                                    aria-label="Close" (click)="closebtn()">Close</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- <app-all-task></app-all-task> -->
+
+
+
+
+<!-- <h2 class="">AddTask:-</h2>
+<form [formGroup]="empTask" (ngSubmit)="addTask()" class="forms">
+    <div class="rows">
+        <label>Employee</label>
+        <div class="cols1">
+            <input type="text" class="form-control" formControlName="employee" placeholder="Enter Name" />
+        </div>
+        <div class="spans" *ngIf="getemployee && getemployee.invalid && getemployee.touched">
+            <span class="text-danger" *ngIf="getemployee.errors?.['required'] ">
+                Employee is required
+            </span>
+
+        </div>
+        <label>Department</label>
+
+        <div class="cols1">
+            <input type="text" class="form-control" formControlName="department" placeholder="Enter Department" />
+        </div>
+        <div class="spans" *ngIf="getdepartment && getdepartment.invalid && getdepartment.touched">
+            <span class="text-danger" *ngIf="getdepartment.errors?.['required'] ">
+                Department is required
+            </span>
+        </div>
+
+        <label>Start Date</label>
+        <div class="cols1">
+            <input type="date" class="form-control" formControlName="startDate" placeholder="Enter Start Date" />
+            <div *ngIf="getstartDate && getstartDate.invalid && getstartDate.touched">
+                <span class="text-danger" *ngIf="getstartDate.errors?.['required']">
+                    Start Date is required </span>
+            </div>
+        </div>
+        <label>Number of days</label>
+        <div class="cols1">
+            <input type="text" class="form-control" formControlName="noOfDay" placeholder=" Number of days" />
+            <h5 *ngIf="displaydate">you Have to submit work till {{ endDate | date:'dd-MM-yyyy' }}</h5>
+
+        </div>
+        <div class="spans" *ngIf="getnoOfDay && getnoOfDay.invalid && getnoOfDay.touched">
+            <span class="text-danger" *ngIf="getnoOfDay.errors?.['required'] ">
+                No of Day is required
+            </span>
+
+
+            <span class="text-danger" *ngIf="getnoOfDay.errors?.['invalidnumber'] ">
+            </span>
+        </div>
+
+        <label>Task description </label>
+        <div class="cols1">
+            <input type="text" class="form-control" formControlName="description" placeholder=" Enter Description" />
+        </div>
+
+        <button type="submit" class="btn btn-primary m-3" [disabled]="empTask.invalid">Add Task</button>
+    </div>
+
+</form> -->

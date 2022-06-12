@@ -13,6 +13,7 @@ export class Employeeclass {
     public country: string,
     public id?: number,
     public Title?: string,
+    public images?: string
 
   ) { }
 }

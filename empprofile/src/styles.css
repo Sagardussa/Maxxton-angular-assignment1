@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    /* background-color: rgb(188, 16, 219); */
+    /* background-color: rgb(215, 222, 225); */
+}
+
+/* input.ng-invalid.ng-touched {
+    border: 2px solid red
+} */

@@ -1,70 +1,49 @@
 <div *ngIf="!errorDis">
-    <div *ngIf="errorDis" class="alert alert-danger">
+    <div *ngIf="errorDis">
         <h2>
             {{errorMsg}}
         </h2>
     </div>
 
+    <div class="col-10 mx-5">
 
-    <!-- <app-empcount [all]="getTotalEmp()" [female]="getTotalfemaleEmp()" [male]="getTotalmaleEmp()" #childcomp>
-    </app-empcount> -->
-    <!-- {{ childcomp.selectedRadiovBtnValue }} -->
-
-    <div class="col-11 m-2">
-        <br />
-        <table border class="table table-bordered">
-            <tr class="bg-dark text-white">
-                <th>Sr no</th>
-                <th>FirstName</th>
-                <th>MiddleName</th>
-                <th>LastName</th>
+        <!-- <button (click)="createEmp()" class="btn1">Add Employee</button> -->
+        <!-- <div class="container"> -->
+        <!-- <br /> -->
+        <table class="table table-bordered">
+            <tr class="headtable bg-dark text-white">
+                <th>SrNo</th>
+                <th>Images</th>
+                <th>FullName</th>
                 <th>Moblie</th>
+                <th id="dob">Date of Birth</th>
                 <th>Email</th>
                 <th>Address</th>
-                <th>City</th>
                 <th>State</th>
                 <th>Country</th>
-
+                <th>Action</th>
             </tr>
-            <!-- <ng-container *ngFor="let n of Employee | filter: searchvalue"> -->
-            <ng-container *ngFor="let e of Employee">
-
-                <!-- <tr
-      [style.color]="text"
-      *ngIf="selectedRadioBtn === 'all' || selectedRadioBtn == n.gender"
-    > -->
-                <!-- <tr *ngIf="
-          childcomp.selectedRadiovBtnValue == 'all' ||
-          childcomp.selectedRadiovBtnValue == n.gender
-        " (click)="onselect(n.id)"> -->
-                <tr>
+            <ng-container *ngFor=" let e of Employee">
+                <tr id="tr2">
                     <td>{{ e.id }}</td>
-                    <td>{{ e.firstName | lowercase }}</td>
-                    <td>{{ e.middleName| lowercase }}</td>
-                    <td>{{ e.lastName| lowercase }}</td>
-                    <td>{{e.moblie}} </td>
-                    <td>{{e.email}} </td>
-                    <td>{{e.address}} {{e.street}} {{e.pincode}}</td>
-                    <td>{{e.city}} </td>
-                    <td>{{e.state}} </td>
-                    <td>{{e.country}} </td>
-
-
-
-                    <!-- <td>{{ n.gender | titlecase | slice: 0:1 }}</td> -->
-
-                    <!-- <td>
-                        <button type="button" class="btn btn-success bg-success m-2 " (click)="editEmp(n.id)">
-                            <i class="bi bi-pencil-square"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger bg-danger m-2" (click)="deleteEmp(n.id)">
-                            <i class="bi bi-trash"></i>
-                        </button>
-
-                    </td> -->
+                    <!-- <td>{{e.images}}</td> -->
+                    <td>
+                        <img src={{e.images}} alt="" height="70px" width="70px">
+                    </td>
+                    <td>{{ e.firstName|titlecase }} {{ e.middleName|titlecase}} {{ e.lastName|titlecase }}</td>
+                    <td>{{e.moblie}}</td>
+                    <td>{{e.DOB |date:'dd-MM-yyyy'}}</td>
+                    <td>{{e.email}}</td>
+                    <td>{{e.address}} {{e.pincode}},{{e.city}} </td>
+                    <td>{{e.state}}</td>
+                    <td>{{e.country}}</td>
+                    <td>
+                        <button class=" btn btn-primary bg-primary " (click)="OnselectviewEmp(e.id)">View</button>
+                    </td>
                 </tr>
             </ng-container>
         </table>
     </div>
 
 </div>
+<!-- </div> -->

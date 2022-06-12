@@ -8,14 +8,20 @@ import { EmpserviceService } from 'src/app/shared/empservice.service';
 })
 export class EmpCardComponent implements OnInit {
   empcard: any = []
+  thumbstyle = ""
 
   constructor(private _emp: EmpserviceService) { }
 
   ngOnInit(): void {
     this._emp.getEmployee().subscribe({
       next: (res) => {
-        console.log(res)
+        // console.log(res)
         this.empcard = res
+        for (let i of this.empcard) {
+          const styles = i.id
+          this.thumbstyle = styles
+          console.log(this.thumbstyle)
+        }
       }
     })
 
